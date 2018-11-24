@@ -26,7 +26,9 @@ public:
     bool removeNode(ListNode<DataType> *q);             // 删除结点，使head的指针域为空，head的数据域还存在
     ListNode<DataType>* findNode(DataType value);
     void cleanLink();
-    DataType getNodeData(const int index);
+    DataType getNodeData(int index=1);
+    int getLength();
+    ListNode<DataType>* getNode(int index=1);
 
 private:
     ListNode<DataType> *head;
@@ -48,13 +50,13 @@ public:
     DataType getData(){         // 获取结点内的数据
         return data;
     }
-    ListNode* getNext(){        // 获取指针域
+    ListNode<DataType>* getNext(){        // 获取指针域
         return next;
     }
 
 private:
     friend class LinkList<DataType>;
-    DataType *next;
+    ListNode<DataType> *next;
     DataType data;
 };
 
@@ -114,14 +116,45 @@ template <typename DataType> ListNode<DataType>* LinkList<DataType>::findNode(Da
         return currentPointer;
     }
 }
+template <typename DataType> DataType LinkList<DataType>::getNodeData(int index){
+    if(index < 1 || index > getLength()){
+        cout << "指定位置无效！" << endl;
+        exit(1);
+    }
+    ListNode<DataType>* p_move = head;
+    for(int i=0; i<index; i++){
+        p_move = p_move->next;
+    }
+    return p_move->getData();
+}
+template <typename DataType> ListNode<DataType>* LinkList<DataType>::getNode(int index){
+    if(index < 1 || index > getLength()){
+        cout << "指定位置无效！" << endl;
+        exit(1);
+    }
+    ListNode<DataType>* p_move = head;
+    for(int i=0; i<index; i++){
+        p_move = p_move->next;
+    }
+    return p_move;
+}
 
-template <typename DataType> DataType LinkList<DataType>::getNodeData(const int index){
+template <typename DataType> void LinkList<DataType>::cleanLink(){
     ListNode<DataType> *current = head;
     while (head->next != NULL) {
         current = head->next;
         head->next = current->next;
         delete current;
     }
+}
+template <typename DataType> int LinkList<DataType>::getLength(){
+    int count = 0;
+    ListNode<DataType>* p_move = head->next;
+    while (p_move != NULL) {
+        p_move = p_move->next;
+        count++;
+    }
+    return count;
 }
 
 #endif // LINKLIST_H
