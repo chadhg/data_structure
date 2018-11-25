@@ -16,7 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    use_linklist.cpp
+    use_linklist.cpp \
+    iscirclelink.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
