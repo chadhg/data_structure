@@ -17,7 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     use_linklist.cpp \
-    iscirclelink.cpp
+    use_stack.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,4 +28,5 @@ HEADERS += \
     seqlist.h \
     linklist.h \
     doublelist.h \
-    circularlist.h
+    circularlist.h \
+    stack.h
