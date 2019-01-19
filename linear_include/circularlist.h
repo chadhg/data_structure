@@ -1,6 +1,7 @@
 /*
 * 循环链表
-*/#ifndef CIRCULARLIST_H
+*/
+#ifndef CIRCULARLIST_H
 #define CIRCULARLIST_H
 
 #include<iostream>

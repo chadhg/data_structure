@@ -1,16 +1,25 @@
 #include <QCoreApplication>
-#include "seqlist.h"
-#include "use_linklist.cpp"
-#include "linklist.h"
+#include "linear_include/seqlist.h"
+#include "linear_src/use_linklist.cpp"
+#include "linear_include/linklist.h"
+#include "linear_src/use_stack.cpp"
+#include "linear_src/use_queue.cpp"
+#include "linear_src/use_hashtable.cpp"
 
 void use_seqlist();
 void use_linklist();
+void use_stack();
+void use_queue();
+void use_hashtable();
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 //    use_seqlist();
-    use_linklist();
+//    use_linklist();
+//    use_stack();
+//    use_queue();
+    use_hashtable();
     return 0;
 //    return a.exec();
 }
@@ -41,4 +50,15 @@ void use_linklist(){
     cout << endl;
     ListNode<int>* search = searchNodeM(&linklist, 3);  // 找倒数第三个
     cout << search->getData() << endl;
+}
+void use_stack(){
+//    printStack();
+    Stack_Eg1();
+}
+void use_queue(){
+//    printQueue();
+    StackQueue();
+}
+void use_hashtable(){
+    printhashtable();
 }
