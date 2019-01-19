@@ -1,5 +1,5 @@
 #include<iostream>
-#include"linklist.h"
+#include"linear_include/linklist.h"
 using namespace std;
 
 /*

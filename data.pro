@@ -16,8 +16,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    use_linklist.cpp \
-    use_stack.cpp
+    linear_src/use_hashtable.cpp \
+    linear_src/use_linklist.cpp \
+    linear_src/use_queue.cpp \
+    linear_src/use_stack.cpp \
+    nolinear_src/use_binarytree.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -25,8 +28,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    seqlist.h \
-    linklist.h \
-    doublelist.h \
-    circularlist.h \
-    stack.h
+    linear_include/circularlist.h \
+    linear_include/doublelist.h \
+    linear_include/hashtable.h \
+    linear_include/linklist.h \
+    linear_include/queue.h \
+    linear_include/queue_eg1.h \
+    linear_include/seqlist.h \
+    linear_include/stack_eg1.h \
+    linear_include/stack_init.h \
+    nolinear_include/binarytree.h
+
